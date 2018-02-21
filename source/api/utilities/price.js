@@ -6,7 +6,7 @@ const getPrice = async () => {
 	const { body: [{ price_eur }] } = await superagent.get(
 		'https://api.coinmarketcap.com/v1/ticker/iota/?convert=EUR'
 	)
-	price = price_eur
+	price = price_eur / 1000000
 	console.log(`fetched IOTA price: ${price}€`)
 }
 getPrice()

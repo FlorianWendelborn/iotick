@@ -14,16 +14,20 @@ export default [
 		},
 		body: JSON.stringify(
 			await Promise.all(
-				config.stations.map(async ({ tickets }) => ({
+				config.stations.map(async ({ tickets, name }) => ({
+					name,
 					tickets: await Promise.all(
 						tickets.map(async ({ duration, seed, value }) => ({
 							amount: price(value),
+							iota: value,
 							duration,
 							qr: qr.imageSync(
 								JSON.stringify(
 									await address({
 										amount: price(value),
-										payload: 'kek',
+										payload: {
+											valid: [Date.now(), Date.now() + duration * 1000],
+										},
 										seed,
 									})
 								),
