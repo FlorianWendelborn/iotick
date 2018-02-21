@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import HomeView from '../views/Home'
 import IotaGate from '@/components/IotaGate'
 import StationsView from '@/components/StationsView'
 
@@ -10,8 +10,8 @@ export default new Router({
 	routes: [
 		{
 			path: '/',
-			name: 'HelloWorld',
-			component: HelloWorld,
+			name: 'HomeView',
+			component: HomeView,
 		},
 		{
 			path: '/iotatest',
@@ -22,6 +22,10 @@ export default new Router({
 			path: '/stations',
 			name: 'Stations',
 			component: StationsView,
+		},
+		{
+			path: '*',
+			redirect: '/',
 		},
 	],
 })
