@@ -11,45 +11,50 @@ import { seed } from '../../../../config'
 export default {
 	name: 'IOTA',
 	data() {
+		return {
+			msg: { tessts: 'xx' },
+		}
+	},
+	created() {
 		var iota = new IOTA({
-			provider: 'http:///node.lukaseder.de:14265',
+			provider: '/proxy',
 		})
-
-		iota.api.sendTransfer(
-			seed,
-			2,
-			18,
-			[
-				{
-					address:
-						'IJSFJTLSKI9FLKSQCJWCQIUMMAHTLMAUPF9IMRFWRKHNIDCWDIPWUGKMNLTMM9XHHV99HJKXJKVJTL9CCKKJWK9OOW',
-					value: 0,
-					message: iota.utils.toTrytes('I am buying ticket XYZ'),
-					tag: iota.utils.toTrytes('some tag'),
-				},
-			],
-			{},
-			function(error, success) {
-				if (error) {
-					console.error(error)
-				} else {
-					console.log(success)
-				}
+		iota.api.getNewAddress(
+			'IJSFJTLSKI9FLKSQCJWCQIUMMAHTLMAUPF9IMRFWRKHNIDCWDIPWUGKMNLTMM9XHHV99HJKXJKVJTL9CCKKJWK9OOW',
+			test => {
+				console.log('new address: ' + test)
 			}
 		)
-
-		// now you can start using all of the functions
 		iota.api.getNodeInfo(function(error, success) {
-			debugger
 			if (error) {
 				console.error(error)
 			} else {
 				console.log(success)
 			}
 		})
-		return {
-			msg: { tessts: 'xx' },
-		}
+		// iota.api.sendTransfer(
+		// 	seed,
+		// 	2,
+		// 	14,
+		// 	[
+		// 		{
+		// 			address:
+		// 			('', () => {})
+		// 				,
+		// 			value: 0,
+		// 			message: iota.utils.toTrytes('I am buying ticket XYZ'),
+		// 			tag: iota.utils.toTrytes('some tag'),
+		// 		},
+		// 	],
+		// 	{},
+		// 	function(error, success) {
+		// 		if (error) {
+		// 			console.error(error)
+		// 		} else {
+		// 			console.log(success)
+		// 		}
+		// 	}
+		// )
 	},
 }
 </script>

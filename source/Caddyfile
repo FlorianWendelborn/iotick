@@ -1,0 +1,4 @@
+http://iotick {
+	proxy /proxy http://localhost:14265
+	proxy / http://localhost:8080
+}
