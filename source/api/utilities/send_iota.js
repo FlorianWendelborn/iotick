@@ -22,3 +22,8 @@ export function sendTransaction(seed, address, value, message, tag, callback) {
 		callback
 	)
 }
+
+export function getTransaction(hash, callback) {
+	console.log('getting transfer details', hash)
+	iota.api.getTransactionsObjects([hash], callback)
+}
