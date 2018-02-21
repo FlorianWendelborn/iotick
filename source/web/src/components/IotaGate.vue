@@ -11,17 +11,12 @@ import { seed } from '../../../../config'
 export default {
 	name: 'IOTA',
 	data() {
-		return {
-			msg: { tessts: 'xx' },
-		}
-	},
-	created() {
 		var iota = new IOTA({
-			provider: 'http:///iota-node.kopciak.at:14265',
+			provider: 'http:///node.lukaseder.de:14265',
 		})
 
 		iota.api.sendTransfer(
-			iota.utils.toTrytes(seed),
+			seed,
 			2,
 			18,
 			[
@@ -51,6 +46,9 @@ export default {
 				console.log(success)
 			}
 		})
+		return {
+			msg: { tessts: 'xx' },
+		}
 	},
 }
 </script>
