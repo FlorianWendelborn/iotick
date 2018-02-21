@@ -14,7 +14,8 @@ export default [
 		},
 		body: JSON.stringify(
 			await Promise.all(
-				config.stations.map(async ({ tickets, name }) => ({
+				config.stations.map(async ({ image, name, tickets }) => ({
+					image,
 					name,
 					tickets: await Promise.all(
 						tickets.map(async ({ duration, seed, value }) => ({
