@@ -19,42 +19,41 @@ export default {
 		var iota = new IOTA({
 			provider: '/proxy',
 		})
-		iota.api.getNewAddress(
-			'IJSFJTLSKI9FLKSQCJWCQIUMMAHTLMAUPF9IMRFWRKHNIDCWDIPWUGKMNLTMM9XHHV99HJKXJKVJTL9CCKKJWK9OOW',
-			test => {
-				console.log('new address: ' + test)
-			}
-		)
+
+		function sendTransfer() {
+			iota.api.sendTransfer(
+				seed,
+				2,
+				14,
+				[
+					{
+						address: ('', () => {}),
+						value: 0,
+						message: iota.utils.toTrytes('I am buying ticket XYZ'),
+						tag: iota.utils.toTrytes('some tag'),
+					},
+				],
+				{},
+				function(error, success) {
+					if (error) {
+						console.error(error)
+					} else {
+						console.log(success)
+					}
+				}
+			)
+		}
+
 		iota.api.getNodeInfo(function(error, success) {
 			if (error) {
 				console.error(error)
 			} else {
-				console.log(success)
+				// sendTransfer();
+				iota.api.getAccountData(seed, {}, test => {
+					console.log(test)
+				})
 			}
 		})
-		// iota.api.sendTransfer(
-		// 	seed,
-		// 	2,
-		// 	14,
-		// 	[
-		// 		{
-		// 			address:
-		// 			('', () => {})
-		// 				,
-		// 			value: 0,
-		// 			message: iota.utils.toTrytes('I am buying ticket XYZ'),
-		// 			tag: iota.utils.toTrytes('some tag'),
-		// 		},
-		// 	],
-		// 	{},
-		// 	function(error, success) {
-		// 		if (error) {
-		// 			console.error(error)
-		// 		} else {
-		// 			console.log(success)
-		// 		}
-		// 	}
-		// )
 	},
 }
 </script>
