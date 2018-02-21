@@ -1,16 +1,10 @@
-import body from 'spirit-body'
 import http from 'http'
 import route from 'spirit-router'
 import spirit from 'spirit'
 
-const jsonBody = body({
-	json: true,
-})
+import orderTicket from './routes/order-ticket'
+import stations from './routes/stations'
 
-const app = route.define([
-	route.wrap(route.post('*', ['body'], body => `the body is ${body}`), [
-		jsonBody,
-	]),
-])
+const app = route.define([...orderTicket, ...stations])
 
-http.createServer(spirit.node.adapter(app)).listen(8081)
+http.createServer(spirit.node.adapter(app)).listen(8081, () => 'listening')

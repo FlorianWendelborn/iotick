@@ -18,6 +18,7 @@
 	},
 	"dependencies": {
 		"iota.lib.js": "^0.4.7",
+		"qr-image": "^3.2.0",
 		"spectre.css": "^0.5.1",
 		"spirit": "^0.6.1",
 		"spirit-body": "^1.2.2",
