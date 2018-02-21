@@ -17,6 +17,7 @@
 		"*.{js,json,css,md,vue,scss}": ["prettier --write", "git add"]
 	},
 	"dependencies": {
+		"axios": "^0.18.0",
 		"iota.lib.js": "^0.4.7",
 		"qr-image": "^3.2.0",
 		"spectre.css": "^0.5.1",
