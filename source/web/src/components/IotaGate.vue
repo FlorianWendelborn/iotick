@@ -6,7 +6,7 @@
 
 <script>
 import IOTA from 'iota.lib.js'
-const seed = ''
+import { seed } from '../../../../config'
 
 export default {
 	name: 'IOTA',
