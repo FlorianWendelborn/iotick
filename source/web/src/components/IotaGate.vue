@@ -6,17 +6,17 @@
 
 <script>
 import IOTA from "iota.lib.js";
-const seed = "jhkjgjkh787yghu3iejdutt3ijrefjdcxuyt34rtyufidi";
+const seed = "RBKSJJDNJXUQZBHTCIUSJISRSFWBGQOMFWVWLECZBKMBAWOUZUQABCDZMXMEGFXQGVBBVSQUZQHWGLPEG";
 
 export default {
   name: "IOTA",
   data() {
     var iota = new IOTA({
-      provider: "http:///iota-node.kopciak.at:14265"
+      provider: "http:///node.lukaseder.de:14265"
     });
 
     iota.api.sendTransfer(
-      iota.utils.toTrytes(seed),
+      seed,
       2,
       18,
       [
