@@ -18,6 +18,8 @@
 	},
 	"dependencies": {
 		"iota.lib.js": "^0.4.7",
+		"request": "^2.83.0",
+		"request-promise-native": "^1.0.5",
 		"spectre.css": "^0.5.1",
 		"spirit": "^0.6.1",
 		"spirit-body": "^1.2.2",
