@@ -5,33 +5,58 @@
 </template>
 
 <script>
-import IOTA from 'iota.lib.js';
+import IOTA from "iota.lib.js";
+const seed = "jhkjgjkh787yghu3iejdutt3ijrefjdcxuyt34rtyufidi";
 
 export default {
-  name: 'IOTA',
-  data () {
+  name: "IOTA",
+  data() {
     var iota = new IOTA({
-        'provider': "http:///iotanode.host:14265"
+      provider: "http:///iota-node.kopciak.at:14265"
     });
-    
+
+    iota.api.sendTransfer(
+      iota.utils.toTrytes(seed),
+      2,
+      18,
+      [
+        {
+          address:
+            "IJSFJTLSKI9FLKSQCJWCQIUMMAHTLMAUPF9IMRFWRKHNIDCWDIPWUGKMNLTMM9XHHV99HJKXJKVJTL9CCKKJWK9OOW",
+          value: 0,
+          message: iota.utils.toTrytes("I am buying ticket XYZ"),
+          tag: iota.utils.toTrytes("some tag")
+        }
+      ],
+      {},
+      function(error, success) {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log(success);
+        }
+      }
+    );
+
     // now you can start using all of the functions
     iota.api.getNodeInfo(function(error, success) {
-        if (error) {
-            console.error(error);
-        } else {
-            console.log(success);
-        }
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(success);
+      }
     });
     return {
-      msg: {"tessts": "xx"}
-    }
+      msg: { tessts: "xx" }
+    };
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
