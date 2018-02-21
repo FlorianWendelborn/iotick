@@ -11,7 +11,7 @@
 		"watch": "nodemon --watch source/api --exec \"babel-node --presets es2015 source/api\""
 	},
 	"dependencies": {
-    "iota.lib.js": "^0.4.7",
+		"iota.lib.js": "^0.4.7",
 		"spectre.css": "^0.5.1",
 		"spirit": "^0.6.1",
 		"spirit-body": "^1.2.2",
@@ -46,6 +46,7 @@
 		"postcss-import": "^11.0.0",
 		"postcss-loader": "^2.0.8",
 		"postcss-url": "^7.2.1",
+		"prettier": "^1.10.2",
 		"rimraf": "^2.6.0",
 		"semver": "^5.3.0",
 		"shelljs": "^0.7.6",
