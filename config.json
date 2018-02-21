@@ -1,4 +1,5 @@
 {
+	"iota_provider": "http://127.0.0.1/proxy",
 	"seed":
 		"JNTXNMCIEJSWDQMSXTTYSSFHFSQUHNEQMDKJYDPJHLUCXVUVRGJLXSHSWSJRZPLLWGHVHJXZBCIJIXPF9",
 	"stations": [
@@ -9,19 +10,19 @@
 					"seed":
 						"SWLPALVVAKWLVXCMXVCMQLIRHZMMMNWFDWSYHTFGWAQXVMEDERGMKTCRWZBYZFCEPFVHMVFHKSSPLZIDD",
 					"duration": 86400,
-					"value": "0.01"
+					"value": 10000
 				},
 				{
 					"seed":
 						"TRJQTUMVDNILSVXFBHNERGHCEJRRVWIAHUAQFCTHAILYMTHHAZJHKSVIGYZRQCBIDYTLKBQSWIKMLBJZN",
 					"duration": 604800,
-					"value": "0.02"
+					"value": 20000
 				},
 				{
 					"seed":
 						"DENZSKPIBGFJCPFPJXEBKWRBHQEIUDCKRZYBVJZZJXWTUUPCNQHDYWEDMDNKPEPJEBLTGFGSNGRGYQYAA",
 					"duration": 2628000,
-					"value": "0.03"
+					"value": 30000
 				}
 			]
 		},
@@ -32,19 +33,19 @@
 					"seed":
 						"SYPEKXKBBADSBVAQAJKNURWLAKRLCJVISFBQEXBCPUTLLEYZAVWLNAFCUTTELQAQINCTHRUTGPQPTDGQX",
 					"duration": 86400,
-					"value": "0.04"
+					"value": 40000
 				},
 				{
 					"seed":
 						"FXERMHMDHKQSSTXWLSSUETPUSAAIBVDMMFWJIVAAMULIRMUXILPLICJHCQCDXWGZRTUHZKXPEKTWCRHEW",
 					"duration": 604800,
-					"value": "0.06"
+					"value": 60000
 				},
 				{
 					"seed":
 						"LLYJGJWVFIJRWUHXDXCPDWFLATVVLZUVFSTSXSRMAXNRFTAIEPFAYPHZQWJQMAMUCTRTLYBKIGUUEDEQI",
 					"duration": 2628000,
-					"value": "0.08"
+					"value": 80000
 				}
 			]
 		}
