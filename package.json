@@ -10,6 +10,7 @@
     "build": "node ./source/web/build/build.js"
   },
   "dependencies": {
+    "iota.lib.js": "^0.4.7",
     "spectre.css": "^0.5.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
