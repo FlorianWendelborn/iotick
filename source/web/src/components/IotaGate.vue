@@ -40,6 +40,7 @@ export default {
 
 		// now you can start using all of the functions
 		iota.api.getNodeInfo(function(error, success) {
+			debugger
 			if (error) {
 				console.error(error)
 			} else {
