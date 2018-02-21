@@ -22,7 +22,7 @@ export default {
 		iota.api.getNewAddress(
 			'IJSFJTLSKI9FLKSQCJWCQIUMMAHTLMAUPF9IMRFWRKHNIDCWDIPWUGKMNLTMM9XHHV99HJKXJKVJTL9CCKKJWK9OOW',
 			test => {
-				console.log(test)
+				console.log('new address: ' + test)
 			}
 		)
 		iota.api.getNodeInfo(function(error, success) {
