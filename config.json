@@ -9,19 +9,19 @@
 					"seed":
 						"SWLPALVVAKWLVXCMXVCMQLIRHZMMMNWFDWSYHTFGWAQXVMEDERGMKTCRWZBYZFCEPFVHMVFHKSSPLZIDD",
 					"duration": 86400,
-					"value": "0.01"
+					"value": 0.01
 				},
 				{
 					"seed":
 						"TRJQTUMVDNILSVXFBHNERGHCEJRRVWIAHUAQFCTHAILYMTHHAZJHKSVIGYZRQCBIDYTLKBQSWIKMLBJZN",
 					"duration": 604800,
-					"value": "0.02"
+					"value": 0.02
 				},
 				{
 					"seed":
 						"DENZSKPIBGFJCPFPJXEBKWRBHQEIUDCKRZYBVJZZJXWTUUPCNQHDYWEDMDNKPEPJEBLTGFGSNGRGYQYAA",
 					"duration": 2628000,
-					"value": "0.03"
+					"value": 0.03
 				}
 			]
 		},
@@ -32,19 +32,19 @@
 					"seed":
 						"SYPEKXKBBADSBVAQAJKNURWLAKRLCJVISFBQEXBCPUTLLEYZAVWLNAFCUTTELQAQINCTHRUTGPQPTDGQX",
 					"duration": 86400,
-					"value": "0.04"
+					"value": 0.04
 				},
 				{
 					"seed":
 						"FXERMHMDHKQSSTXWLSSUETPUSAAIBVDMMFWJIVAAMULIRMUXILPLICJHCQCDXWGZRTUHZKXPEKTWCRHEW",
 					"duration": 604800,
-					"value": "0.06"
+					"value": 0.06
 				},
 				{
 					"seed":
 						"LLYJGJWVFIJRWUHXDXCPDWFLATVVLZUVFSTSXSRMAXNRFTAIEPFAYPHZQWJQMAMUCTRTLYBKIGUUEDEQI",
 					"duration": 2628000,
-					"value": "0.08"
+					"value": 0.08
 				}
 			]
 		}

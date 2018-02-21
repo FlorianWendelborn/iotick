@@ -1,10 +1,14 @@
 import superagent from 'superagent'
 
-const getPrice = async iota => {
+let price = Number.POSITIVE_INFINITY
+
+const getPrice = async () => {
 	const { body: [{ price_eur }] } = await superagent.get(
 		'https://api.coinmarketcap.com/v1/ticker/iota/?convert=EUR'
 	)
-	return price_eur
+	price = price_eur
+	console.log(`fetched IOTA price: ${price}€`)
 }
+getPrice()
 
-export default getPrice
+export default value => price * value
