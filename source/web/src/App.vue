@@ -29,22 +29,37 @@ export default {
 .menu-links a {
 	height: 50px;
 	text-align: center;
-	color: #ffffff;
+	color: #c9ced8;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	outline: none;
 }
 
 .menu-links a:active {
+	outline: none;
 	text-decoration: none;
 }
 
+.menu-links a:focus {
+	outline: none;
+	text-decoration: none;
+	outline-color: transparent;
+	outline-style: none;
+}
+
 .menu-links a:hover {
+	outline: none;
 	text-decoration: none;
 }
 
 .menu-links a:visited {
+	outline: none;
 	text-decoration: none;
+}
+
+.menu-links .router-link-exact-active {
+	color: #ffffff;
 }
 
 .navbar {
