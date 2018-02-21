@@ -10,19 +10,28 @@ const jsonBody = body({ json: true })
 export default [
 	route.wrap(
 		route.post('/api/v1/order-ticket', ['body'], async data => {
-			var t = JSON.parse(data.data)
+			var payload = JSON.parse(data.data)
+			var image = data.image
+			payload.image = image
 			const result = await new Promise((resolve, reject) => {
-				sendTransaction(seed, t.address, 0, t.message, t.tag, (error, res) => {
-					if (error) {
-						console.log(error)
-						return reject(error)
+				sendTransaction(
+					seed,
+					payload.address,
+					0,
+					payload.message,
+					payload.tag,
+					(error, res) => {
+						if (error) {
+							console.log(error)
+							return reject(error)
+						}
+						console.log('processed transfer')
+						resolve(res)
 					}
-					console.log('processed transfer')
-					resolve(res)
-				})
+				)
 			})
 
-			return result[0].hash
+			return result.length > 0 && result[0].hash
 		}),
 		[jsonBody]
 	),

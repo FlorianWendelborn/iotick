@@ -2,10 +2,13 @@ import route from 'spirit-router'
 import qr from 'qr-image'
 import body from 'spirit-body'
 import IOTA from 'iota.lib.js'
-import { seed } from '../../../config'
+import { iota_provider } from '../../../config'
 import { getTransaction } from '../utilities/send_iota'
 
 const jsonBody = body({ json: true })
+var iota = new IOTA({
+	provider: iota_provider,
+})
 
 export default [
 	route.wrap(
@@ -18,12 +21,15 @@ export default [
 						console.log(error)
 						return reject(error)
 					}
-					console.log('received transaction details', res)
-					resolve(res)
+					var t = res.length && res[0]
+
+					t.decoded = iota.utils.extractJson(res)
+					console.log('received transaction details', t)
+					resolve(t)
 				})
 			})
 
-			return result.length && result[0]
+			return result
 		}),
 		[jsonBody]
 	),
