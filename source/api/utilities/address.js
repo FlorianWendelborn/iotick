@@ -11,6 +11,7 @@ const seed = iota.utils.toTrytes(
 const addresses = new Map()
 
 export default async ({ amount, payload, seed }) => {
+	console.log(seed)
 	const address = addresses.has(seed)
 		? addresses.get(seed)
 		: await new Promise((resolve, reject) => {
