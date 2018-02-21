@@ -1,21 +1,6 @@
 {
-	"name": "web",
-	"version": "1.0.0",
-	"description": "A Vue.js project",
 	"author": "Kevin Peters <kpe@3yourmind.com>",
-	"private": true,
-	"scripts": {
-		"precommit": "lint-staged",
-		"dev":
-			"webpack-dev-server --inline --progress --config ./source/web/build/webpack.dev.conf.js",
-		"start": "npm run dev",
-		"build": "node ./source/web/build/build.js",
-		"watch":
-			"nodemon --watch source/api --exec \"babel-node --presets es2015 source/api\""
-	},
-	"lint-staged": {
-		"*.{js,json,css,md,vue,scss}": ["prettier --write", "git add"]
-	},
+	"browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
 	"dependencies": {
 		"axios": "^0.18.0",
 		"iota.lib.js": "^0.4.7",
@@ -29,6 +14,7 @@
 		"vue": "^2.5.2",
 		"vue-router": "^3.0.1"
 	},
+	"description": "A Vue.js project",
 	"devDependencies": {
 		"autoprefixer": "^7.1.2",
 		"babel-cli": "^6.26.0",
@@ -78,5 +64,20 @@
 		"node": ">= 6.0.0",
 		"npm": ">= 3.0.0"
 	},
-	"browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
+	"lint-staged": {
+		"*.{js,json,css,md,vue,scss}": ["prettier --write", "git add"]
+	},
+	"name": "web",
+	"private": true,
+	"scripts": {
+		"build": "node ./source/web/build/build.js",
+		"dev":
+			"webpack-dev-server --inline --progress --config ./source/web/build/webpack.dev.conf.js",
+		"precommit": "lint-staged",
+		"server": "babel-node --presets es2015 source/api",
+		"start": "npm run dev",
+		"watch":
+			"nodemon --watch source/api --exec \"babel-node --presets es2015 source/api\""
+	},
+	"version": "1.0.0"
 }
