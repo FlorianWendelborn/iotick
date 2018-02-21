@@ -1,5 +1,13 @@
 <template>
 	<div class="stations-view__container">
+		<div
+			v-if="stations === null"
+			class="stations-view__loading-container load-3"
+		>
+			<div class="line" />
+			<div class="line" />
+			<div class="line" />
+		</div>
 		<div v-for="(station, index) in stations" :key="index">
 			<h2 class="stations-view__heading--second" v-text="station.name" />
 			<div class="container">
@@ -53,6 +61,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.stations-view__loading-container {
+	height: calc(100vh - 50px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .stations-view__container {
 	text-align: center;
 	font-size: 24px;
@@ -68,5 +83,35 @@ export default {
 
 .stations-view__heading--fourth {
 	font-size: 3vw;
+}
+
+.line {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	background-color: #fca311;
+}
+
+.load-3 .line:nth-last-child(1) {
+	animation: loadingC 0.6s 0.1s linear infinite;
+}
+.load-3 .line:nth-last-child(2) {
+	animation: loadingC 0.6s 0.2s linear infinite;
+}
+.load-3 .line:nth-last-child(3) {
+	animation: loadingC 0.6s 0.3s linear infinite;
+}
+
+@keyframes loadingC {
+	0% {
+		transform: translate(0, 0);
+	}
+	50% {
+		transform: translate(0, 15px);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
 }
 </style>
