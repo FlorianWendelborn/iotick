@@ -5,9 +5,9 @@
   "author": "Kevin Peters <kpe@3yourmind.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config ./source/web/build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node ./source/web/build/build.js"
   },
   "dependencies": {
     "spectre.css": "^0.5.1",
