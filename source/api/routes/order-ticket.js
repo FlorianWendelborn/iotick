@@ -2,12 +2,12 @@ import route from 'spirit-router'
 import qr from 'qr-image'
 import body from 'spirit-body'
 import IOTA from 'iota.lib.js'
-import { seed } from '../../../config'
+import { seed, iota_provider } from '../../../config'
 
 const jsonBody = body({ json: true })
 
 var iota = new IOTA({
-	provider: 'http://127.0.0.1/proxy',
+	provider: iota_provider,
 })
 
 function sendTransaction(seed, address, value, message, tag, callback) {

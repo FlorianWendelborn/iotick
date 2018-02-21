@@ -4,6 +4,7 @@ import spirit from 'spirit'
 
 import orderTicket from './routes/order-ticket'
 import stations from './routes/stations'
+import './daemon'
 
 const app = route.define([...orderTicket, ...stations])
 
