@@ -2,14 +2,10 @@ import route from 'spirit-router'
 import qr from 'qr-image'
 import body from 'spirit-body'
 import IOTA from 'iota.lib.js'
-import { seed, iota_provider } from '../../../config'
+import { seed } from '../../../config'
 import { sendTransaction } from '../utilities/send_iota'
 
 const jsonBody = body({ json: true })
-
-var iota = new IOTA({
-	provider: iota_provider,
-})
 
 export default [
 	route.wrap(

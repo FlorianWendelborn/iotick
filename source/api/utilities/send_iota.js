@@ -1,3 +1,10 @@
+import IOTA from 'iota.lib.js'
+import { iota_provider } from '../../../config'
+
+var iota = new IOTA({
+	provider: iota_provider,
+})
+
 export function sendTransaction(seed, address, value, message, tag, callback) {
 	console.log('sending transfer')
 	iota.api.sendTransfer(
